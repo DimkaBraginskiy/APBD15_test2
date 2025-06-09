@@ -8,5 +8,5 @@ public class CustomerResponseDto
     public string LastName { get; set; } = null!;
     public string? PhoneNumber { get; set; }
     
-    //public List<PurchaseResponseDto> Purchases { get; set; } = new List<PurchaseResponseDto>();
+    public List<PurchaseResponseDto> Purchases { get; set; } = new List<PurchaseResponseDto>();
 }

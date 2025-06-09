@@ -48,13 +48,31 @@ public class DbService : IDbService
             {
                 FirstName = c.FirstName,
                 LastName = c.LastName,
-                PhoneNumber = c.PhoneNumber
-            }).FirstOrDefaultAsync(token);
+                PhoneNumber = c.PhoneNumber,
+                Purchases = c.PurchaseHistories
+                    .Select(ph => new PurchaseResponseDto()
+                    {
+                        Date = ph.PurchaseDate,
+                        Rating = ph.Rating,
+                        Price = ph.AvailableProgram.Price,
+                        WashingMachine = new WashingMachineResponseDto()
+                        {
+                            Serial = ph.AvailableProgram.WashingMachine.SerialNumber,
+                            MaxWeight = ph.AvailableProgram.WashingMachine.MaxWeight
+                        },
+                        WashingProgram = new WashingProgramResponseDto()
+                        {
+                            Name = ph.AvailableProgram.WashingProgram.Name,
+                            Duration = ph.AvailableProgram.WashingProgram.DurationMinutes
+                        }
+                    }).ToList()
+            }).FirstOrDefaultAsync(token);               
 
         if (customer == null)
         {
             throw new NotFoundException($"Customer with id {id} not found.");
         }
+                
 
         return customer;
     }
