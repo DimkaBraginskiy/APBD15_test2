@@ -3,11 +3,15 @@
 A REST API for managing customers, their purchase history and laundry machines accountancy
 
 ##  Table of Contents
+- [Tech Stack](#-tech-stack)
 - [API Endpoints](#-api-endpoints)
 - [Example Output](#-example-output)
 
 
-
+## Tech Stack
+![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![EF Core](https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ##  API Endpoints
 
 ### Customers
@@ -81,4 +85,6 @@ A REST API for managing customers, their purchase history and laundry machines a
   ]
 }
 ```
+
+
 
